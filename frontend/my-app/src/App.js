@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Banner from './components/Banner';
+import Dashboard from './components/Dashboard';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [bannerSettings, setBannerSettings] = useState({
+        description: '',
+        visible: false,
+        timer: 0,
+        link: ''
+    });
+
+    const fetchBannerSettings = () => {
+        axios.get('http://localhost:5000/api/banner')
+            .then(response => {
+                const settings = response.data;
+                settings.visible = !!settings.visible; // Convert visible to boolean
+                setBannerSettings(settings);
+            })
+            .catch(error => console.error('Error fetching banner settings:', error));
+    };
+
+    useEffect(() => {
+        fetchBannerSettings();
+    }, []);
+
+    return (
+        <div>
+            <Banner 
+                visible={bannerSettings.visible}
+                description={bannerSettings.description}
+                link={bannerSettings.link}
+                timer={bannerSettings.timer}
+            />
+            <Dashboard onUpdate={fetchBannerSettings} />
+        </div>
+    );
 }
 
 export default App;
