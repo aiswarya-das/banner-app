@@ -153,7 +153,7 @@ app.get("/", (req, res) => {
     }
     console.log(data[0])
     // return res.json(data[0]);
-    res.send(data[0]);
+    res.send("hello world");
   });
   
 });
