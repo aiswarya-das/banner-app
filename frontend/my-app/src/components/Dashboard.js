@@ -9,7 +9,7 @@ function Dashboard({ onUpdate }) {
   const [link, setLink] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/banner')
+    axios.get('http://localhost:5001/api/banner')
       .then(response => {
         const { description, visible, timer, link } = response.data;
         setDescription(description || '');
@@ -21,7 +21,7 @@ function Dashboard({ onUpdate }) {
   }, []);
 
   const updateBannerSettings = () => {
-    axios.post('http://localhost:5000/api/banner', {
+    axios.post('http://localhost:5001/api/banner', {
       description,
       visible,
       timer,

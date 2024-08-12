@@ -12,7 +12,7 @@ function App() {
     });
 
     const fetchBannerSettings = () => {
-        axios.get('http://localhost:5000/api/banner')
+        axios.get('http://localhost:5001/api/banner')
             .then(response => {
                 const settings = response.data;
                 settings.visible = !!settings.visible; 
