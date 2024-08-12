@@ -110,8 +110,9 @@
 // });
 
 // module.exports = app;
+require('dotenv').config();
 const express = require('express');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
@@ -120,6 +121,12 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Create connection to MySQL
+console.log("host:",process.env.DB_HOST)
+console.log("db name:",process.env.DB_NAME)
+console.log("db user:",process.env.DB_USER)
+console.log("db PASS:",process.env.DB_PASSWORD)
+
+
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -146,11 +153,11 @@ app.get("/", (req, res) => {
     }
     console.log(data[0])
     // return res.json(data[0]);
-    res.send(data);
+    res.send(data[0]);
   });
   
 });
 
-app.listen(5000, () => console.log("Server ready on port 3000."));
+app.listen(5001, () => console.log("Server ready on port 5000."));
 
 module.exports = app;
