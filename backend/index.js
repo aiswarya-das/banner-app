@@ -121,10 +121,10 @@ app.use(bodyParser.json());
 
 // Create connection to MySQL
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Jithinammu1",
-  database: "banner_db"
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
 
 // Connecting to MySQL
