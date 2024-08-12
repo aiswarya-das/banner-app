@@ -1,0 +1,43 @@
+.banner-container {
+  background-color: #f8d7da;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.banner-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.banner-title {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #d9534f;
+}
+
+.banner-description {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.banner-timer {
+  font-size: 1em;
+  margin-bottom: 20px;
+  color: #6c757d;
+}
+
+.banner-link {
+  font-size: 1.1em;
+  color: #fff;
+  background-color: #d9534f;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.banner-link:hover {
+  background-color: #c9302c;
+}

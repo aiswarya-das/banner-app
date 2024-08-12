@@ -15,7 +15,7 @@ function App() {
         axios.get('http://localhost:5000/api/banner')
             .then(response => {
                 const settings = response.data;
-                settings.visible = !!settings.visible; // Convert visible to boolean
+                settings.visible = !!settings.visible; 
                 setBannerSettings(settings);
             })
             .catch(error => console.error('Error fetching banner settings:', error));

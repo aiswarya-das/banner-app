@@ -1,0 +1,49 @@
+.dashboard-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.dashboard-title {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.dashboard-field {
+  margin-bottom: 15px;
+}
+
+.dashboard-label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+}
+
+.dashboard-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.dashboard-checkbox {
+  margin-left: 10px;
+}
+
+.dashboard-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.dashboard-button:hover {
+  background-color: #0056b3;
+}
